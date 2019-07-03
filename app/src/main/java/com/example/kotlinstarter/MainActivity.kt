@@ -32,17 +32,17 @@ class MainActivity : AppCompatActivity() {
         resultText.text = rolled.toString()
 
         when (rolled) {
-            1 -> image.setImageResource(R.drawable.dice1)
-            2 -> image.setImageResource(R.drawable.dice2)
-            3 -> image.setImageResource(R.drawable.dice3)
-            4 -> image.setImageResource(R.drawable.dice4)
-            5 -> image.setImageResource(R.drawable.dice5)
-            6 -> image.setImageResource(R.drawable.dice6)
+            1 -> image.setImageResource(R.drawable.dice_1)
+            2 -> image.setImageResource(R.drawable.dice_2)
+            3 -> image.setImageResource(R.drawable.dice_3)
+            4 -> image.setImageResource(R.drawable.dice_4)
+            5 -> image.setImageResource(R.drawable.dice_5)
+            6 -> image.setImageResource(R.drawable.dice_6)
         }
     }
 
     private fun reset(image: ImageView, resultText: TextView){
-        image.setImageResource(R.drawable.blank)
+        image.setImageResource(R.drawable.empty_dice)
         resultText.text = getString(R.string.start)
     }
 }
