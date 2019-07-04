@@ -9,18 +9,21 @@ import android.widget.Toast
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
+    private lateinit var image: ImageView
+    private lateinit var resultText: TextView
+    private lateinit var rollButton:Button
+    private lateinit var resetButton:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val image:ImageView = findViewById(R.id.dice_image)
-        val resultText: TextView = findViewById(R.id.result_text)
+        image = findViewById(R.id.dice_image)
+        resultText = findViewById(R.id.result_text)
 
-        val rollButton:Button = findViewById(R.id.roll_button)
+        rollButton = findViewById(R.id.roll_button)
         rollButton.setOnClickListener{rollDice(image,resultText)}
 
-        val resetButton:Button = findViewById(R.id.reset_button)
+        resetButton  = findViewById(R.id.reset_button)
         resetButton.setOnClickListener{reset(image,resultText)}
     }
 
