@@ -1,4 +1,7 @@
 # Android_Learning
+# References
+- https://developer.android.com/index.html
+- https://material.io/ : a conceptual design philosophy that outlines how apps should look and function on mobile devices
 # Basic topics:
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e, the Activity , v..v)
