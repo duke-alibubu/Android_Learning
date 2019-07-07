@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AboutMe</string>
-    <string name="name">Hello This is for learning purpose only</string>
+    <string name="name">Kappa Blahblah blahblah Bobo</string>
+    <string name="what_is_your_nickname">What is your Nickname?</string>
+    <string name="done">Done</string>
     <string name="yellow_star">Just a yellow star</string>
-    <string name="bio">Just a yellow star\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg\n This is for testinggg</string>
+    <string name="bio">Hello! \n \nThis Android App is a very simple one, created for testing purpose only.\n\nWritten in Kotlin. \nMake use of ScrollView and EditText.\n\nSimple Android widgets\n\nHello Hello\n\nTest Test Test\n\nBlah blah\n\nKappa kappa\n\nOne\n\nTwo\n\nThree</string>
 </resources>
