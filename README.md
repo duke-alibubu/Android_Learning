@@ -31,7 +31,8 @@
 - View elements can be grouped inside a ViewGroup. A view group acts as a container for the views, or other view groups, within it. LinearLayout is an example of a view group that arranges its views linearly.
 - A click handler is a method that is invoked when the user clicks or taps on a UI element. To attach a click-handler method to a view such as a button, use the setOnClickListener() method.
 - VIEW STYLING: Content -> Padding -> Border -> Margin. Padding is the space inside the boundaries of a view or element. It is the space between the edges of the view and the view's content. Margin is the space added outside of the view's borders. It is the space from the edge of the view to its parent.
-- STYLE: A collection of attributes that specify the appearance and format for a view. A style can include font color, font size, background color, padding, margin, and other common attributes. Using styles also allows you to keep these common attributes in one location. Reusing a style gives your app a consistent look when you have multiple views. A style is extractable by right-clicking on the view component - Refactor > Extract Style.
+###### STYLE
+- A collection of attributes that specify the appearance and format for a view. A style can include font color, font size, background color, padding, margin, and other common attributes. Using styles also allows you to keep these common attributes in one location. Reusing a style gives your app a consistent look when you have multiple views. A style is extractable by right-clicking on the view component - Refactor > Extract Style.
 ###### ScrollView
 - A scroll view can contain only one child view. If you want to scroll more than one view, then add a ```ViewGroup``` such as a ```LinearLayout``` to the ```ScrollView```, and put the views to be scrolled inside that ```ViewGroup```.
 ### Drawables compatibility
