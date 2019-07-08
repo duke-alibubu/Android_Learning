@@ -19,6 +19,8 @@
 - The parent Layout element:  orientation attribute: Direction of how we want to group the positions of the views, either vertically or horizontally.
 - layout_gravity: to define the place of the element
 - It's a good practice to assign an ID to the View, so that we can later access the view in the code part by using findViewbyID() method.
+###### Constraint Layout
+- 
 
 ### Activities
 - An Activity is a core Android class that is responsible for drawing an Android app UI and receiving input events.
