@@ -26,6 +26,11 @@
 - Chain:
   + A chain is a group of views that are linked to each other with bidirectional constraints.
   + The views within a chain can be distributed either vertically or horizontally.
+  + A chain will have a head (first view of the chain)
+  + Chain styles: Defining the way the chained views are spread out and aligned. You style a chain by assigning a chain style attribute, adding weight, or setting bias on the views. 4 chain styles: Spread, Spread inside, Packed, Weighted.
+  + To add a chain style to a chain, set the ```layout_constraintHorizontal_chainStyle``` or the ```layout_constraintVertical_chainStyle``` attribute for the head of the chain. 
+- Constraint bias: positions the view element along the horizontal and vertical axes. By default, the view is centered between the two constraints with a bias of 50%.
+- Three constraint types (Check the docs for this) ...
 ### Activities
 - An Activity is a core Android class that is responsible for drawing an Android app UI and receiving input events.
 - All activities have an associated layout file, which is an XML file in the app's resources. The layout file is named for the activity, for example activity_main.xml.
