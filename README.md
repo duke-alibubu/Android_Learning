@@ -31,6 +31,10 @@
   + To add a chain style to a chain, set the ```layout_constraintHorizontal_chainStyle``` or the ```layout_constraintVertical_chainStyle``` attribute for the head of the chain. 
 - Constraint bias: positions the view element along the horizontal and vertical axes. By default, the view is centered between the two constraints with a bias of 50%.
 - Three constraint types (Check the docs for this) ...
+- All views in a ```ConstraintLayout``` need to be constrained horizontally and vertically, or else the views jump to an edge of the parent when you run the app.This is why the Layout Editor adds ```tools:layout_editor_absoluteX``` if the view is not horizontally constrained. Layout Editor gives the design-time attribute the value of the view's current position in the layout, to keep the views in place during design. You can safely ignore these ```tools``` attributes, because Android Studio removes them after you create the constraints.
+- Baseline constraints:
+  + Aligns a view's text baseline to the text baseline of another view that has text.
+  + Are helpful when views have different font sizes.
 ### Activities
 - An Activity is a core Android class that is responsible for drawing an Android app UI and receiving input events.
 - All activities have an associated layout file, which is an XML file in the app's resources. The layout file is named for the activity, for example activity_main.xml.
