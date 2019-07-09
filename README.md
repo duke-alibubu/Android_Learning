@@ -20,8 +20,12 @@
 - layout_gravity: to define the place of the element
 - It's a good practice to assign an ID to the View, so that we can later access the view in the code part by using findViewbyID() method.
 ###### Constraint Layout
-- 
-
+- A ```ViewGroup``` that allows you to position and size the layout's child views in a flexible way. 
+- A constraint is a connection/alignment between two UI elements. Each constraint connects or aligns one view to another view, to the parent layout, or to an invisible guideline. 
+- In a constraint layout, each view's position is defined using at least one horizontal constraint, and at least one vertical constraint.
+- Chain:
+  + A chain is a group of views that are linked to each other with bidirectional constraints.
+  + The views within a chain can be distributed either vertically or horizontally.
 ### Activities
 - An Activity is a core Android class that is responsible for drawing an Android app UI and receiving input events.
 - All activities have an associated layout file, which is an XML file in the app's resources. The layout file is named for the activity, for example activity_main.xml.
