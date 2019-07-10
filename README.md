@@ -1,10 +1,15 @@
 # Android_Learning
+### Basic repo infos
+- AboutMe is a basic Android App that uses simple Linear Layout
+- ColorMyViews is a basic Android App that makes use of Constraint Layout and the Layout Editor.
+- Dice Roller is a basic Android App that has compatible drawable XML resources, and simple Linear Layout from the code editor.
+- TemplateApp is a basic Android App resulting from a template.
 # References
 - https://developer.android.com/index.html
 - https://material.io/ : a conceptual design philosophy that outlines how apps should look and function on mobile devices
-# Basic topics:
+# Basic topics
 ### Basic structure & general settings of an Android Project  
-- 'java' folder contains the main code for the app (i.e, the Activity , v..v)
+- 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
 - 'manifests' folder contains files that provide essential info about your app to the Android system. (e.g the AndroidManifest.xml)
 - 'Gradle Scripts': Gradle is a build automation system that describes the app's PROJECT STRUCTURE, CONFIG. & DEPENDENCIES
@@ -54,3 +59,12 @@
 - XML file images, a.k.a vector drawables - can scale without losing quality (that's why they are better than bitmap images like PNG or JPEG). 
 - Vector drawables are only natively supported in versions of Android higher than API 21. In older versions, Gradle generates PNG images for those drawables when your app is built.
 - You can specify that the Android Support Library should be used for vector drawables in older API versions with the ```vectorDrawables.useSupportLibrary = true``` configuration parameter in the ```build.gradle``` file. Once you've enabled the support library for vector drawables, use the ```app:srcCompat``` attribute in the <ImageView> element (instead of ```android:src```) to specify the vector drawable source for that image. The ```app``` namespace in your XML layout file is for attributes that come from either your custom code or from libraries, not from the core Android framework.
+  
+# Some execution optimization techniques
+### Data binding: Eliminate ```findViewById()```
+- Every time you use ```findViewById()``` to search for a view after the view is created or recreated, the Android system traverses the view hierarchy at runtime to find it. This would be a problem when the number of views turns large.
+- SOLUTION: Create an object that contains a reference to each view. This object, called a ```Binding``` object, can be used by your whole app. This technique is called ```data binding```.
+- Once a binding object has been created for your app, you can access the views, and other data, through the binding object, without having to traverse the view hierarchy or search for the data everytime you find the view.
+- An useful link: ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-data-binding-basics/index.html?index=..%2F..android-kotlin-fundamentals#5```
+
+
