@@ -5,8 +5,8 @@
 - Dice Roller is a basic Android App that has compatible drawable XML resources, and simple Linear Layout from the code editor.
 - TemplateApp is a basic Android App resulting from a template.
 # References
-- https://developer.android.com/index.html
-- https://material.io/ : a conceptual design philosophy that outlines how apps should look and function on mobile devices
+- ```https://developer.android.com/index.html```
+- ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
 # Basic topics
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
