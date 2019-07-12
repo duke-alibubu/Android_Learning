@@ -73,6 +73,10 @@
 - Every time you use ```findViewById()``` to search for a view after the view is created or recreated, the Android system traverses the view hierarchy at runtime to find it. This would be a problem when the number of views turns large.
 - SOLUTION: Create an object that contains a reference to each view. This object, called a ```Binding``` object, can be used by your whole app. This technique is called ```data binding```.
 - Once a binding object has been created for your app, you can access the views, and other data, through the binding object, without having to traverse the view hierarchy or search for the data everytime you find the view.
+- When the binding object is created, the compiler generates the names of the views in the binding object from the IDs of the views in the layout, converting them to camel case. So, for example, ```done_button``` is ```doneButton``` in the binding object, ```nickname_edit``` becomes ```nicknameEdit```, and ```nickname_text``` becomes ```nicknameText```.
+- You can take advantage of data binding to make a data class directly available to a view. This technique simplifies the code, and is extremely valuable for handling more complex cases.
+- To bind views to data, create a data class then add a ```<data>``` block inside the ```<layout>``` tag --> define a ```<variable>``` with a name, and a type that is the data class.
+         (```I do not like this much really. Will not use it ...```)
 - An useful link: ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-data-binding-basics/index.html?index=..%2F..android-kotlin-fundamentals#5```
 
 
