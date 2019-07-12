@@ -58,13 +58,25 @@
 ### Drawables compatibility
 - XML file images, a.k.a vector drawables - can scale without losing quality (that's why they are better than bitmap images like PNG or JPEG). 
 - Vector drawables are only natively supported in versions of Android higher than API 21. In older versions, Gradle generates PNG images for those drawables when your app is built.
-- You can specify that the Android Support Library should be used for vector drawables in older API versions with the ```vectorDrawables.useSupportLibrary = true``` configuration parameter in the ```build.gradle``` file. Once you've enabled the support library for vector drawables, use the ```app:srcCompat``` attribute in the <ImageView> element (instead of ```android:src```) to specify the vector drawable source for that image. The ```app``` namespace in your XML layout file is for attributes that come from either your custom code or from libraries, not from the core Android framework.
+- You can specify that the Android Support Library should be used for vector drawables in older API versions with the ```vectorDrawables.useSupportLibrary = true``` configuration parameter in the ```build.gradle``` file. Once you've enabled the support library for vector drawables, use the ```app:srcCompat``` attribute in the <ImageView> element (instead of ```android:src```) to specify the vector drawable source for that image. The ```app``` namespace in your XML layout file is for attributes that come from either your custom code or from libraries, not from the core Android framework.  
+
+### Fragments
+- A ```fragment``` represents a behavior or a portion of user interface (UI) in an activity. You can combine multiple fragments in a single activity to build a multi-pane UI, and you can reuse a fragment in multiple activities. 
+- A fragment ~ a modular section of an activity, something like a "sub activity":
+  + A fragment has its own lifecycle and receives its own input events.
+  + You can add or remove a fragment while the activity is running.
+  + A fragment is defined in a Kotlin class.
+  + A fragment's UI is defined in an XML layout file.
   
 # Some execution optimization techniques
 ### Data binding: Eliminate ```findViewById()```
 - Every time you use ```findViewById()``` to search for a view after the view is created or recreated, the Android system traverses the view hierarchy at runtime to find it. This would be a problem when the number of views turns large.
 - SOLUTION: Create an object that contains a reference to each view. This object, called a ```Binding``` object, can be used by your whole app. This technique is called ```data binding```.
 - Once a binding object has been created for your app, you can access the views, and other data, through the binding object, without having to traverse the view hierarchy or search for the data everytime you find the view.
+- When the binding object is created, the compiler generates the names of the views in the binding object from the IDs of the views in the layout, converting them to camel case. So, for example, ```done_button``` is ```doneButton``` in the binding object, ```nickname_edit``` becomes ```nicknameEdit```, and ```nickname_text``` becomes ```nicknameText```.
+- You can take advantage of data binding to make a data class directly available to a view. This technique simplifies the code, and is extremely valuable for handling more complex cases.
+- To bind views to data, create a data class then add a ```<data>``` block inside the ```<layout>``` tag --> define a ```<variable>``` with a name, and a type that is the data class.
+         (```I do not like this much really. Will not use it ...```)
 - An useful link: ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-data-binding-basics/index.html?index=..%2F..android-kotlin-fundamentals#5```
 
 
