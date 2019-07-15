@@ -68,6 +68,18 @@
   + A fragment is defined in a Kotlin class.
   + A fragment's UI is defined in an XML layout file.
   
+### Navigation paths
+- A quite hard topics. Refer to ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-add-navigation/index.html?index=..%2F..android-kotlin-fundamentals#2``` for more informations.
+- 
+###### The back stack
+- The Android system keeps track of where users navigate on an Android-powered device. Each time the user goes to a new destination on the device, Android adds that destination to the ```back stack```.
+- When the user presses the Back button, the app goes to the destination that's at the top of the back stack. BY DEFAULT, the top of the back stack is the screen that the user last viewed. 
+- A navigation action can modify the back stack. You manage the back stack by setting the "pop" behavior for the actions that connect the fragments:
+  + The ```popUpTo``` attribute of an action "pops up" the back stack to a given destination before navigating. (Destinations are removed from the back stack.)
+  + If the ```popUpToInclusive``` attribute is false or is not set, popUpTo removes destinations up to the specified destination, but leaves the specified destination in the back stack.
+  + If ```popUpToInclusive``` is set to true, the ```popUpTo``` attribute removes all destinations up to and including the given destination from the back stack.
+  + If ```popUpToInclusive``` is true and ```popUpTo``` is set to the app's starting location, the action removes ALL app destinations from the back stack. The Back button takes the user all the way out of the app.
+  
 # Some execution optimization techniques
 ### Data binding: Eliminate ```findViewById()```
 - Every time you use ```findViewById()``` to search for a view after the view is created or recreated, the Android system traverses the view hierarchy at runtime to find it. This would be a problem when the number of views turns large.
@@ -77,7 +89,7 @@
 - You can take advantage of data binding to make a data class directly available to a view. This technique simplifies the code, and is extremely valuable for handling more complex cases.
 - To bind views to data, create a data class then add a ```<data>``` block inside the ```<layout>``` tag --> define a ```<variable>``` with a name, and a type that is the data class.
         
-        (```I do not like this much really. Will not use it ...```)
+        (I do not like this much really. Will not use it ...)
 - An useful link: ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-data-binding-basics/index.html?index=..%2F..android-kotlin-fundamentals#5```
 
 
