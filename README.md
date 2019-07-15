@@ -69,9 +69,24 @@
   + A fragment is defined in a Kotlin class.
   + A fragment's UI is defined in an XML layout file.
   
-### Navigation paths
+### Navigation components & paths
 - A quite hard topics. Refer to ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-add-navigation/index.html?index=..%2F..android-kotlin-fundamentals#2``` for more informations.
-- 
+- Setup to use Android navigation library:
+  + Add dependencies for ```navigation-fragment-ktx``` and ```navigation-ui-ktx``` in the module-level build.gradle file.
+  + Add an ```ext``` variable for the ```navigationVersion``` in the project-level build.gradle file.
+- **Navigation destinations** are fragments, activities, or other app components that the user navigates to. A **navigation graph** defines the possible paths from one navigation destination to the next.
+  + To create a navigation graph, create a new Android resource file of type Navigation. This file defines the navigation flow through the app. The file is in the ```res/navigation``` folder, and it's typically called ```navigation.xml```.
+  + To define the path from one destination to another, use the Navigation Graph to create an action that connects the destinations. In the ```navigation.xml``` file, each of these connections is represented as an action that has an ```ID```.
+- A **navigation host** fragment, usually named ```NavHostFragment```, acts as a host for the fragments in the navigation graph:
+  + As the user moves between destinations defined in the navigation graph, the ```NavHostFragment``` swaps the fragments in and out and manages the fragment back stack.
+  + In the ```activity_main.xml``` layout file, the ```NavHostFragment``` is represented by a fragment element with the name ```android:name="androidx.navigation.fragment.NavHostFragment"```.
+- To define which fragment is displayed when the user taps a view (for example a button), set the ```onClick``` listener for the view:
+  + In the ```onClick``` listener, call ```findNavController().navigate()``` on the view.
+  + Specify the ```ID``` of the ```action``` that leads to the destination.
+- **Conditional navigation** navigates to one screen in one case, and to a different screen in another case. To create conditional navigation:
+  + Use the Navigation Editor to create a connection from the starting fragment to each of the possible destination fragments.
+  + Give each connection a unique ID.
+  + In the click-listener method for the ```View```, add code to detect the conditions. Then call ```findNavController().navigate()``` on the view, passing in the ID for the appropriate action.
 ###### The back stack
 - The Android system keeps track of where users navigate on an Android-powered device. Each time the user goes to a new destination on the device, Android adds that destination to the ```back stack```.
 - When the user presses the Back button, the app goes to the destination that's at the top of the back stack. BY DEFAULT, the top of the back stack is the screen that the user last viewed. 
