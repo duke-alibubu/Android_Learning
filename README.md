@@ -4,6 +4,7 @@
 - ColorMyViews is a basic Android App that makes use of Constraint Layout and the Layout Editor.
 - Dice Roller is a basic Android App that has compatible drawable XML resources, and simple Linear Layout from the code editor.
 - TemplateApp is a basic Android App resulting from a template.
+- AndroidTrivia is a basic Android App about using navigation path and fragments.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -79,7 +80,13 @@
   + If the ```popUpToInclusive``` attribute is false or is not set, popUpTo removes destinations up to the specified destination, but leaves the specified destination in the back stack.
   + If ```popUpToInclusive``` is set to true, the ```popUpTo``` attribute removes all destinations up to and including the given destination from the back stack.
   + If ```popUpToInclusive``` is true and ```popUpTo``` is set to the app's starting location, the action removes ALL app destinations from the back stack. The Back button takes the user all the way out of the app.
-  
+
+### The app bar
+- The app bar, sometimes called the action bar, is a dedicated space for app branding and identity. For example, you can set the app bar's color. The app bar gives the user access to familiar navigation features such as an options menu. To access the options menu from the app bar, the user taps the icon with the three vertical dots.  
+- By default, the user uses the system Back button to navigate to previous screens. However, Android apps can also have an on-screen Up button that appears at the top left of the app bar.
+- The Up button navigates within the app, based on the hierarchical relationships between screens. The Up button never navigates the user out of the app.
+       (This thing does not seem to be real good. Refer to commit ```Up Button``` for more infos)
+
 # Some execution optimization techniques
 ### Data binding: Eliminate ```findViewById()```
 - Every time you use ```findViewById()``` to search for a view after the view is created or recreated, the Android system traverses the view hierarchy at runtime to find it. This would be a problem when the number of views turns large.
@@ -89,7 +96,7 @@
 - You can take advantage of data binding to make a data class directly available to a view. This technique simplifies the code, and is extremely valuable for handling more complex cases.
 - To bind views to data, create a data class then add a ```<data>``` block inside the ```<layout>``` tag --> define a ```<variable>``` with a name, and a type that is the data class.
         
-        (I do not like this much really. Will not use it ...)
+        (I do not like this much really. Will not use it... Oops seems like I still have to. )
 - An useful link: ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-data-binding-basics/index.html?index=..%2F..android-kotlin-fundamentals#5```
 
 
