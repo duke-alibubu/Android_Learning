@@ -97,6 +97,15 @@
   + If ```popUpToInclusive``` is true and ```popUpTo``` is set to the app's starting location, the action removes ALL app destinations from the back stack. The Back button takes the user all the way out of the app.
 
 ### Sharing datas between activities and fragments
+###### Safe Args
+- To help catch errors caused by missing keys or mis-matched types when you pass data from one fragment to another, use a Gradle plugin called Safe Args.
+- A key-value store, also known as a dictionary or associative array, is a data structure where you use a unique key (a string) to fetch the value associated with that key.
+- To add Safe Args plugin, need to change dependencies settings in the gradle files (look at the docs for more details).
+- After successfully adding the Safe Args plugin, it generates a ```NavDirection``` class for each fragment. (E.g: ```GameFragment``` n -> ```GameFragmentDirections```). So now we switches between fragments by, E.g:  ```view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(#Intent_Params#))```
+- Upon receiving the shared arguments, use: ```val args = FragmentNameArgs.fromBundle(arguments!!)``` ... rand resolve them.
+###### Implicit Intents
+- An Intent is a simple message object that's used to communicate between Android components. With an implicit intent, you initiate an activity without knowing which app or activity will handle the task. For example, if you want your app to take a photo, you typically don't care which app or activity performs the task. 
+- When multiple Android apps can handle the same implicit intent, Android shows the user a chooser, so that the user can select an app to handle the request.
 ### The app bar
 - The app bar, sometimes called the action bar, is a dedicated space for app branding and identity. For example, you can set the app bar's color. The app bar gives the user access to familiar navigation features such as an options menu. To access the options menu from the app bar, the user taps the icon with the three vertical dots.  
 - By default, the user uses the system Back button to navigate to previous screens. However, Android apps can also have an on-screen Up button that appears at the top left of the app bar.
