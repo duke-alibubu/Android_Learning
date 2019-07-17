@@ -96,6 +96,7 @@
   + If ```popUpToInclusive``` is set to true, the ```popUpTo``` attribute removes all destinations up to and including the given destination from the back stack.
   + If ```popUpToInclusive``` is true and ```popUpTo``` is set to the app's starting location, the action removes ALL app destinations from the back stack. The Back button takes the user all the way out of the app.
 
+### Sharing datas between activities and fragments
 ### The app bar
 - The app bar, sometimes called the action bar, is a dedicated space for app branding and identity. For example, you can set the app bar's color. The app bar gives the user access to familiar navigation features such as an options menu. To access the options menu from the app bar, the user taps the icon with the three vertical dots.  
 - By default, the user uses the system Back button to navigate to previous screens. However, Android apps can also have an on-screen Up button that appears at the top left of the app bar.
