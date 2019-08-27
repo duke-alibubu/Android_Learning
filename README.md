@@ -16,6 +16,12 @@
   + Bound services run because some other app (or the system) has said that it wants to make use of the service. This is basically the service providing an API to another process.
 - **Broadcast receiver**: A component that enables the system to deliver events to the app outside of a regular user flow, allowing the app to respond to system-wide broadcast announcements. Because broadcast receivers are another well-defined entry into the app, the system can deliver broadcasts even to apps that aren't currently running. So, for example, an app can schedule an alarm to post a notification to tell the user about an upcoming event... and by delivering that alarm to a BroadcastReceiver of the app, there is no need for the app to remain running until the alarm goes off.
 - **Content provider**: Manages a shared set of app data that you can store in the file system, in a SQLite database, on the web, or on any other persistent storage location that your app can access. Through the content provider, other apps can query or modify the data if the content provider allows it.
+### UI controller
+- A *UI Controller* is a UI-based class such as ```Activity``` or ```Fragment```. A UI controller should only contain logic that handles UI and operating-system interactions such as displaying views and capturing user input. Don't put decision-making logic, such as logic that determines the text to display, into the UI controller.
+### ViewModel
+- A ```ViewModel``` holds data to be displayed in a fragment or activity associated with the ```ViewModel```. A ```ViewModel``` can do simple calculations and transformations on data to prepare the data to be displayed by the UI controller. In this architecture, the ```ViewModel``` performs the decision-making.
+###### ViewModelFactory
+- A ```ViewModelFactory``` instantiates ```ViewModel``` objects, with or without constructor parameters.
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
