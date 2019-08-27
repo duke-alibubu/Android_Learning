@@ -20,8 +20,20 @@
 - A *UI Controller* is a UI-based class such as ```Activity``` or ```Fragment```. A UI controller should only contain logic that handles UI and operating-system interactions such as displaying views and capturing user input. Don't put decision-making logic, such as logic that determines the text to display, into the UI controller.
 ### ViewModel
 - A ```ViewModel``` holds data to be displayed in a fragment or activity associated with the ```ViewModel```. A ```ViewModel``` can do simple calculations and transformations on data to prepare the data to be displayed by the UI controller. In this architecture, the ```ViewModel``` performs the decision-making.
+- The ```ViewModel``` should never contain references to fragments, activities, or views, because activities, fragments, and views do not survive configuration changes.
 ###### ViewModelFactory
 - A ```ViewModelFactory``` instantiates ```ViewModel``` objects, with or without constructor parameters.
+###### Using the ```GameViewModel``` class
+- Open the ```build.gradle(module:app)``` file. Inside the ```dependencies``` block, add the Gradle dependency for the ```ViewModel```: 
+```implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'```
+- The ```ViewModel``` is destroyed when the associated fragment is detached, or when the activity is finished. Right before the ```ViewModel``` is destroyed, the ```onCleared()``` callback is called to clean up the resources.
+###### Initializing the ```ViewModel``` with the ```ViewModelProvider```
+- A ```ViewModel``` needs to be associated with a UI controller. To associate the two, you create a reference to the ```ViewModel``` inside the UI controller.
+- During configuration changes such as screen rotations, UI controllers such as fragments are re-created. However, ```ViewModel``` instances survive. If you create the ```ViewModel``` instance using the ```ViewModel``` class, a new object is created every time the fragment is re-created. ***Instead, always create the ```ViewModel``` instance using a ```ViewModelProvider.```***
+###### ViewModelFactory
+- As the name implied, this class makes use of the factory design pattern.
+- The factory method pattern is a creational design pattern that uses factory methods to create objects. A factory method is a method that returns an instance of the same class.
+- 
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
