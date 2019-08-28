@@ -5,6 +5,7 @@
 - Dice Roller is a basic Android App that has compatible drawable XML resources, and simple Linear Layout from the code editor.
 - TemplateApp is a basic Android App resulting from a template.
 - AndroidTrivia is a basic Android App about using navigation path and fragments.
+- GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -33,7 +34,19 @@
 ###### ViewModelFactory
 - As the name implied, this class makes use of the factory design pattern.
 - The factory method pattern is a creational design pattern that uses factory methods to create objects. A factory method is a method that returns an instance of the same class.
-- 
+### LiveData
+- ```LiveData ``` let you build data object that notify views when the underlying database changes.
+- To use the ```LiveData``` class, you set up "observers" (for example, activities or fragments) that observe changes in the app's data. - Some properties of ```LiveData```:
+  + ```LiveData``` is observable, which means that an observer is notified when the data held by the ```LiveData``` object changes.
+  + ```LiveData``` holds data; ```LiveData``` is a wrapper that can be used with any data.
+  + ```LiveData``` is lifecycle-aware, meaning that it **ONLY** updates observers that are in an active lifecycle state such as STARTED or RESUMED.
+###### MutableLiveData
+- ```MutableLiveData``` is a ```LiveData``` whose value can be changed. ```MutableLiveData``` is a generic class, so you need to specify the type of data that it holds.
+  + Using ```observer```: ```MutableLiveData``` class have a function ```observe``` that will receive an event when the data held by the observed ```LiveData``` object changes. An observer object is then initialized with a lambda, a function that will be called to handle the event.
+###### LiveData
+- Sometimes we want the data to be only readable, not editable -> ```LiveData``` instead of ```MutableLiveData```.
+- From outside the ```ViewModel```, data should be readable, but not editable, so the data should be exposed as ```LiveData```.
+- **IMPORTANT NOTES** Usually, ```LiveData``` delivers updates to the observers only when data changes. An exception to this behavior is that observers also receive updates when the observer changes from an inactive to an active state (An example is, when the game fragment is re-created after a screen rotation, it moves from an inactive to an active state). The observer in the fragment is re-connected to the existing ```ViewModel``` and receives the current data.
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
