@@ -33,7 +33,14 @@
 ###### ViewModelFactory
 - As the name implied, this class makes use of the factory design pattern.
 - The factory method pattern is a creational design pattern that uses factory methods to create objects. A factory method is a method that returns an instance of the same class.
-- 
+### LiveData
+- ```LiveData ``` let you build data object that notify views when the underlying database changes.
+- To use the ```LiveData``` class, you set up "observers" (for example, activities or fragments) that observe changes in the app's data. - Some properties of ```LiveData```:
+  + ```LiveData``` is observable, which means that an observer is notified when the data held by the ```LiveData``` object changes.
+  + ```LiveData``` holds data; ```LiveData``` is a wrapper that can be used with any data.
+  + ```LiveData``` is lifecycle-aware, meaning that it **ONLY** updates observers that are in an active lifecycle state such as STARTED or RESUMED.
+- ```MutableLiveData``` is a ```LiveData``` whose value can be changed. ```MutableLiveData``` is a generic class, so you need to specify the type of data that it holds.
+  + Using ```observer```: ```MutableLiveData``` class have a function ```observe``` that will receive an event when the data held by the observed ```LiveData``` object changes. An observer object is then initialized with a lambda, a function that will be called to handle the event.
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
