@@ -57,7 +57,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/you_scored_text"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="40" />
+            tools:text="{@String.valueOf(scoreViewModel.score)}" />
 
         <Button
             android:id="@+id/play_again_button"
@@ -72,4 +72,9 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+        <variable
+            name = "scoreViewModel"
+            type = "com.example.android.guesstheword.screens.score.ScoreViewModel"/>
+    </data>
 </layout>

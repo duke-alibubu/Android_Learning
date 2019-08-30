@@ -57,7 +57,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/word_is_text"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="&quot;Tuna&quot;" />
+            tools:text="{@gameViewModel.word}" />
 
         <TextView
             android:id="@+id/timer_text"
@@ -70,10 +70,11 @@
             android:textColor="@color/grey_text_color"
             android:textSize="14sp"
             android:textStyle="normal"
+            android:visibility="visible"
             app:layout_constraintBottom_toTopOf="@+id/score_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="0:00" />
+            android:text="@{gameViewModel.currentTimeString}" />
 
         <TextView
             android:id="@+id/score_text"
@@ -133,5 +134,12 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline" />
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+        <variable
+            name="gameViewModel"
+            type="com.example.android.guesstheword.screens.game.GameViewModel" />
+    </data>
 </layout>
