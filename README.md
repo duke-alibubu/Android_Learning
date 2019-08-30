@@ -47,6 +47,17 @@
 - Sometimes we want the data to be only readable, not editable -> ```LiveData``` instead of ```MutableLiveData```.
 - From outside the ```ViewModel```, data should be readable, but not editable, so the data should be exposed as ```LiveData```.
 - **IMPORTANT NOTES** Usually, ```LiveData``` delivers updates to the observers only when data changes. An exception to this behavior is that observers also receive updates when the observer changes from an inactive to an active state (An example is, when the game fragment is re-created after a screen rotation, it moves from an inactive to an active state). The observer in the fragment is re-connected to the existing ```ViewModel``` and receives the current data.
+### Data binding with LiveData and ViewModel
+- You can associate a ```ViewModel``` with a layout by using data binding.
+- ```ViewModel``` objects hold the UI data. By passing ViewModel objects into the data binding, you can automate some of the communication between the views and the ViewModel objects.
+- First declare add a data-binding variable of the type ```ViewModel``` in the layout xml file.
+- Second, in the ```GameFragment``` file, pass the ```GameViewModel``` into the data binding.
+  + Example: ```binding.gameViewModel = viewModel```
+- Finally, to make the ```LiveData``` data binding work, set the current activity (the UI controller) as the lifecycle owner of the binding variable in the UI controller.
+  + ```binding.lifecycleOwner = this```
+- One of the ***EXTREMELY POWERFUL*** features of data binding when working with ```LiveData``` is that:
+  + ```LiveData``` objects can be used as a data-binding source to automatically notify the UI about changes in the data.
+  + Define in the xml file: ```android:text="@{gameViewModel.word}"```
 ### Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
