@@ -173,4 +173,5 @@
         (I do not like this much really. Will not use it... Oops seems like I still have to. )
 - An useful link: ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-data-binding-basics/index.html?index=..%2F..android-kotlin-fundamentals#5```
 
-
+## Room database
+![Room db](https://codelabs.developers.google.com/codelabs/kotlin-android-training-room-database/img/2bb4a0617e161b13.png)
