@@ -6,6 +6,7 @@
 - TemplateApp is a basic Android App resulting from a template.
 - AndroidTrivia is a basic Android App about using navigation path and fragments.
 - GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
+- TrackMySleepQuality is an Android App making use of Room database.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
