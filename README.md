@@ -175,3 +175,6 @@
 
 ## Room database
 ![Room db](https://codelabs.developers.google.com/codelabs/kotlin-android-training-room-database/img/2bb4a0617e161b13.png)
+- ```Room``` does all the hard work for you to get from Kotlin data classes to entities that can be stored in SQLite tables, and from function declarations to SQL queries.
+- You must define each entity as an annotated data class, and the interactions as an annotated interface, a *data access object (DAO)*. Room uses these annotated classes to create tables in the database, and queries that act on the database.
+- Regards to ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-room-database/index.html?index=..%2F..android-kotlin-fundamentals#0``` for more info regarding Room databases.
