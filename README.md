@@ -191,8 +191,8 @@
   + **Scope**: A coroutine's scope defines the context in which the coroutine runs. A scope combines information about a coroutine's job and dispatcher. Scopes keep track of coroutines. When you launch a coroutine, it's "in a scope," which means that you've indicated which scope will keep track of the coroutine.
 
 - Example pattern of a coroutine code in Kotlin:
-
-```fun someWorkNeedsToBeDone {
+```
+fun someWorkNeedsToBeDone {
    uiScope.launch {
         suspendFunction()
    }
@@ -202,4 +202,6 @@ suspend fun suspendFunction() {
    withContext(Dispatchers.IO) {
        longrunningWork()
    }
-}```
+}
+```
+
