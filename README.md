@@ -204,4 +204,10 @@ suspend fun suspendFunction() {
    }
 }
 ```
+## Triggering Navigation
+- Other than ```onClick``` handlers that trigger navigation to a destination fragment, there are other events that can trigger navigation.
+- We can also use the event of changing a ```LiveData``` (through using an ```observer```) to trigger navigation.
 
+## LiveData Transformation
+- Using ```Transformations.map(...)```, we can map the ```LiveData``` to another possible data types that can be displayed on screen.
+- We can use this to trigger certain UI state as well.
