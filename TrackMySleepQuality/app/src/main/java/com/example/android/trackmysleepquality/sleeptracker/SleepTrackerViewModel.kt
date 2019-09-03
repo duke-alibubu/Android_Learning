@@ -32,6 +32,17 @@ import kotlinx.coroutines.*
 class SleepTrackerViewModel(
         val database: SleepDatabaseDao,
         application: Application) : AndroidViewModel(application) {
+
+    private val _navigateToSleepQuality = MutableLiveData<SleepNight>()
+
+    val navigateToSleepQuality: LiveData<SleepNight>
+        get() = _navigateToSleepQuality
+
+    private var _showSnackbarEvent = MutableLiveData<Boolean>()
+
+    val showSnackBarEvent: LiveData<Boolean>
+        get() = _showSnackbarEvent
+
     private var viewModelJob : Job = Job()
 
     //Using Dispatchers.Main means that coroutines launched in the uiScope will run on the main thread.
@@ -49,6 +60,7 @@ class SleepTrackerViewModel(
     init {
         initializeTonight()
     }
+
 
     private fun initializeTonight() {
         uiScope.launch{
@@ -88,6 +100,7 @@ class SleepTrackerViewModel(
             val oldNight =  tonight.value ?: return@launch       //the return@label syntax specifies the function from which this statement returns, among several nested functions
             oldNight.endTimeMilli = System.currentTimeMillis()
             update(oldNight)
+            _navigateToSleepQuality.value =  oldNight
         }
     }
 
@@ -101,6 +114,7 @@ class SleepTrackerViewModel(
         uiScope.launch {
             clear()
             tonight.value = null
+            _showSnackbarEvent.value = true
         }
     }
 
@@ -116,5 +130,24 @@ class SleepTrackerViewModel(
         viewModelJob.cancel()
     }
 
+    fun doneNavigating(){
+        _navigateToSleepQuality.value = null
+    }
+
+    fun doneShowingSnackbar() {
+        _showSnackbarEvent.value = false
+    }
+
+    val startButtonVisible = Transformations.map(tonight){
+        it == null
+    }
+
+    val stopButtonVisible = Transformations.map(tonight){
+        it != null
+    }
+
+    val clearButtonVisible = Transformations.map(nights){
+        it?.isNotEmpty()
+    }
 }
 

@@ -22,7 +22,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.android.trackmysleepquality.R
+import com.example.android.trackmysleepquality.database.SleepDatabase
+import com.example.android.trackmysleepquality.database.SleepDatabaseDao
 import com.example.android.trackmysleepquality.databinding.FragmentSleepQualityBinding
 
 /**
@@ -46,6 +51,46 @@ class SleepQualityFragment : Fragment() {
                 inflater, R.layout.fragment_sleep_quality, container, false)
 
         val application = requireNotNull(this.activity).application
+
+        val arguments = SleepQualityFragmentArgs.fromBundle(arguments!!)
+
+        val dataSource = SleepDatabase.getInstance(application).sleepDatabaseDao
+
+        val viewModelFactory = SleepQualityViewModelFactory(arguments.sleepNightKey,dataSource)
+
+        val sleepQualityViewModel = ViewModelProviders.of(this,viewModelFactory).get(SleepQualityViewModel::class.java)
+
+        binding.qualityZeroImage.setOnClickListener{
+            sleepQualityViewModel.onSetSleepQuality(0)
+        }
+
+        binding.qualityOneImage.setOnClickListener{
+            sleepQualityViewModel.onSetSleepQuality(1)
+        }
+        binding.qualityTwoImage.setOnClickListener{
+            sleepQualityViewModel.onSetSleepQuality(2)
+        }
+        binding.qualityThreeImage.setOnClickListener{
+            sleepQualityViewModel.onSetSleepQuality(3)
+        }
+        binding.qualityFourImage.setOnClickListener{
+            sleepQualityViewModel.onSetSleepQuality(4)
+        }
+
+        binding.qualityFiveImage.setOnClickListener{
+            sleepQualityViewModel.onSetSleepQuality(5)
+        }
+
+        binding.sleepQualityViewModel = sleepQualityViewModel
+
+        sleepQualityViewModel.navigateToSleepTracker.observe(this, Observer {it ->
+            if (it == true){
+                this.findNavController().navigate(
+                        SleepQualityFragmentDirections.actionSleepQualityFragmentToSleepTrackerFragment())
+                sleepQualityViewModel.doneNavigating()
+            }
+
+        })
 
         return binding.root
     }
