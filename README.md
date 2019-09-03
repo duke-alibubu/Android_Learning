@@ -6,7 +6,7 @@
 - TemplateApp is a basic Android App resulting from a template.
 - AndroidTrivia is a basic Android App about using navigation path and fragments.
 - GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
-- TrackMySleepQuality is an Android App making use of Room database.
+- TrackMySleepQuality is an Android App making use of Room database & coroutines.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -189,3 +189,17 @@
   + **Job**: Basically, a job is anything that can be canceled. Every coroutine has a job, and you can use the job to cancel the coroutine. Jobs can be arranged into parent-child hierarchies. Canceling a parent job immediately cancels all the job's children, which is a lot more convenient than canceling each coroutine manually.
   + **Dispatcher**: The dispatcher sends off coroutines to run on various threads. For example, Dispatcher.Main runs tasks on the main thread, and Dispatcher.IO offloads blocking I/O tasks to a shared pool of threads.
   + **Scope**: A coroutine's scope defines the context in which the coroutine runs. A scope combines information about a coroutine's job and dispatcher. Scopes keep track of coroutines. When you launch a coroutine, it's "in a scope," which means that you've indicated which scope will keep track of the coroutine.
+
+- Example pattern of a coroutine code in Kotlin:
+
+```fun someWorkNeedsToBeDone {
+   uiScope.launch {
+        suspendFunction()
+   }
+}
+
+suspend fun suspendFunction() {
+   withContext(Dispatchers.IO) {
+       longrunningWork()
+   }
+}```
