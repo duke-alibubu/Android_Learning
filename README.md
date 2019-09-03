@@ -179,3 +179,13 @@
 - ```Room``` does all the hard work for you to get from Kotlin data classes to entities that can be stored in SQLite tables, and from function declarations to SQL queries.
 - You must define each entity as an annotated data class, and the interactions as an annotated interface, a *data access object (DAO)*. Room uses these annotated classes to create tables in the database, and queries that act on the database.
 - Regards to ```https://codelabs.developers.google.com/codelabs/kotlin-android-training-room-database/index.html?index=..%2F..android-kotlin-fundamentals#0``` for more info regarding Room databases.
+
+## Coroutines
+- Earlier we have used callbacks for multi-threading and asynchronous programming, but it has some drawbacks. Using ```callback``` makes the code harder to read, and also callback does not allow some programming features, most notably exceptions
+- Another way is to use **Coroutine** - which lets you convert callback-based code to sequential code.
+  + Coroutines are asynchronous and non-blocking.
+  + Coroutines use *suspend* functions to make asynchronous code sequential.
+- To use coroutines in Kotlin, you need three things:
+  + **Job**: Basically, a job is anything that can be canceled. Every coroutine has a job, and you can use the job to cancel the coroutine. Jobs can be arranged into parent-child hierarchies. Canceling a parent job immediately cancels all the job's children, which is a lot more convenient than canceling each coroutine manually.
+  + **Dispatcher**: The dispatcher sends off coroutines to run on various threads. For example, Dispatcher.Main runs tasks on the main thread, and Dispatcher.IO offloads blocking I/O tasks to a shared pool of threads.
+  + **Scope**: A coroutine's scope defines the context in which the coroutine runs. A scope combines information about a coroutine's job and dispatcher. Scopes keep track of coroutines. When you launch a coroutine, it's "in a scope," which means that you've indicated which scope will keep track of the coroutine.
