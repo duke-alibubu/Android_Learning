@@ -219,7 +219,11 @@ suspend fun suspendFunction() {
   + When an item changes, instead of redrawing the entire list, `RecyclerView` can update that one item. This is a huge efficiency gain when displaying lists of complex items!
 - Make use of **Adapter design pattern**: `RecyclerView` uses an adapter to transform app data into something the `RecyclerView` can display, without changing how the app stores and processes the data.
 ![RecyclerView basics](https://codelabs.developers.google.com/codelabs/kotlin-android-training-recyclerview-fundamentals/img/64eb759f01f5541f.png)
+
 - To display your data in a `RecyclerView`, you need the following parts:
- + Data to display.
- + A `RecyclerView` instance defined in your layout file, to act as the container for the views.
- + 
+  + Data to display.
+  + A `RecyclerView` instance defined in your layout file, to act as the container for the views.
+  + A layout for each item of data.
+  + A layout manager.
+  + A view holder: The view holder extends the `ViewHolder` class. It contains the view information for displaying one item from the item's layout. View holders also add information that `RecyclerView` uses to efficiently move views around the screen.
+  + An adapter: The adapter connects your data to the `RecyclerView`. It adapts the data so that it can be displayed in a `ViewHolder`. A `RecyclerView` uses the adapter to figure out how to display the data on the screen.
