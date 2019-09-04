@@ -224,6 +224,10 @@ suspend fun suspendFunction() {
   + Data to display.
   + A `RecyclerView` instance defined in your layout file, to act as the container for the views.
   + A layout for each item of data.
-  + A layout manager.
+  + A layout manager. Every `RecyclerView` needs a layout manager that tells it how to position items in the list. Android provides a `LinearLayoutManager`, which by default lays out the items in a vertical list of full width rows.
   + A view holder: The view holder extends the `ViewHolder` class. It contains the view information for displaying one item from the item's layout. View holders also add information that `RecyclerView` uses to efficiently move views around the screen.
   + An adapter: The adapter connects your data to the `RecyclerView`. It adapts the data so that it can be displayed in a `ViewHolder`. A `RecyclerView` uses the adapter to figure out how to display the data on the screen.
+  
+- In a production app, you might have multiple view holders, more complex adapters, and multiple developers making changes. You should structure your code so that everything related to a view holder is only in the view holder.
+  + One way is to use Android's **Refactor > Extract > Function**
+  + A good example: The `onCreateViewHolder()` method in the adapter currently inflates the view from the layout resource for the `ViewHolder`. However, inflation has nothing to do with the adapter, and everything to do with the `ViewHolder`. Inflation should happen in the `ViewHolder`.
