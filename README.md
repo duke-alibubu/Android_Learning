@@ -217,3 +217,9 @@ suspend fun suspendFunction() {
   + By default, ```RecyclerView``` only does work to process or draw items that are currently visible on the screen. For example, if your list has a thousand elements but only 10 elements are visible, ```RecyclerView``` does only enough work to draw 10 items on the screen. When the user scrolls, ```RecyclerView``` figures out what new items should be on the screen and does just enough work to display those items.
   + When an item scrolls off the screen, the item's views are recycled. That means the item is filled with new content that scrolls onto the screen. This `RecyclerView` behavior saves a lot of processing time and helps lists scroll fluidly.
   + When an item changes, instead of redrawing the entire list, `RecyclerView` can update that one item. This is a huge efficiency gain when displaying lists of complex items!
+- Make use of **Adapter design pattern**: `RecyclerView` uses an adapter to transform app data into something the `RecyclerView` can display, without changing how the app stores and processes the data.
+![RecyclerView basics](https://codelabs.developers.google.com/codelabs/kotlin-android-training-recyclerview-fundamentals/img/64eb759f01f5541f.png)
+- To display your data in a `RecyclerView`, you need the following parts:
+ + Data to display.
+ + A `RecyclerView` instance defined in your layout file, to act as the container for the views.
+ + 
