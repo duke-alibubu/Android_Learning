@@ -6,7 +6,7 @@
 - TemplateApp is a basic Android App resulting from a template.
 - AndroidTrivia is a basic Android App about using navigation path and fragments.
 - GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
-- TrackMySleepQuality is an Android App making use of Room database & coroutines.
+- TrackMySleepQuality is more complex Android App making use of Room database & coroutines and RecyclerView.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -162,7 +162,7 @@
 - The Up button navigates within the app, based on the hierarchical relationships between screens. The Up button never navigates the user out of the app.
        (This thing does not seem to be real good. Refer to commit ```Up Button``` for more infos)
 
-# Some execution optimization techniques
+# Some more advanced techniques
 ## Data binding: Eliminate ```findViewById()```
 - Every time you use ```findViewById()``` to search for a view after the view is created or recreated, the Android system traverses the view hierarchy at runtime to find it. This would be a problem when the number of views turns large.
 - SOLUTION: Create an object that contains a reference to each view. This object, called a ```Binding``` object, can be used by your whole app. This technique is called ```data binding```.
@@ -211,3 +211,23 @@ suspend fun suspendFunction() {
 ## LiveData Transformation
 - Using ```Transformations.map(...)```, we can map the ```LiveData``` to another possible data types that can be displayed on screen.
 - We can use this to trigger certain UI state as well.
+
+## RecyclerView
+- The greatest benefit of ```RecyclerView``` is that it is very efficient for large lists:
+  + By default, ```RecyclerView``` only does work to process or draw items that are currently visible on the screen. For example, if your list has a thousand elements but only 10 elements are visible, ```RecyclerView``` does only enough work to draw 10 items on the screen. When the user scrolls, ```RecyclerView``` figures out what new items should be on the screen and does just enough work to display those items.
+  + When an item scrolls off the screen, the item's views are recycled. That means the item is filled with new content that scrolls onto the screen. This `RecyclerView` behavior saves a lot of processing time and helps lists scroll fluidly.
+  + When an item changes, instead of redrawing the entire list, `RecyclerView` can update that one item. This is a huge efficiency gain when displaying lists of complex items!
+- Make use of **Adapter design pattern**: `RecyclerView` uses an adapter to transform app data into something the `RecyclerView` can display, without changing how the app stores and processes the data.
+![RecyclerView basics](https://codelabs.developers.google.com/codelabs/kotlin-android-training-recyclerview-fundamentals/img/64eb759f01f5541f.png)
+
+- To display your data in a `RecyclerView`, you need the following parts:
+  + Data to display.
+  + A `RecyclerView` instance defined in your layout file, to act as the container for the views.
+  + A layout for each item of data.
+  + A layout manager. Every `RecyclerView` needs a layout manager that tells it how to position items in the list. Android provides a `LinearLayoutManager`, which by default lays out the items in a vertical list of full width rows.
+  + A view holder: The view holder extends the `ViewHolder` class. It contains the view information for displaying one item from the item's layout. View holders also add information that `RecyclerView` uses to efficiently move views around the screen.
+  + An adapter: The adapter connects your data to the `RecyclerView`. It adapts the data so that it can be displayed in a `ViewHolder`. A `RecyclerView` uses the adapter to figure out how to display the data on the screen.
+  
+- In a production app, you might have multiple view holders, more complex adapters, and multiple developers making changes. You should structure your code so that everything related to a view holder is only in the view holder.
+  + One way is to use Android's **Refactor > Extract > Function**
+  + A good example: The `onCreateViewHolder()` method in the adapter currently inflates the view from the layout resource for the `ViewHolder`. However, inflation has nothing to do with the adapter, and everything to do with the `ViewHolder`. Inflation should happen in the `ViewHolder`.
