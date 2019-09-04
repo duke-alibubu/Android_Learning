@@ -50,7 +50,7 @@ class SleepTrackerViewModel(
 
     //It is a Room feature that every time the data in the database changes, the LiveData nights is updated to show the latest data.
     //You never need to explicitly set the LiveData or update it. Room updates the data to match the database.
-    private val nights : LiveData<List<SleepNight>> = database.getAllNights()
+    val nights : LiveData<List<SleepNight>> = database.getAllNights()
 
     val nightString = Transformations.map(nights){
         nights -> formatNights(nights,application.resources)

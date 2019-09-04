@@ -63,6 +63,18 @@ class SleepTrackerFragment : Fragment() {
                         this, viewModelFactory).get(SleepTrackerViewModel::class.java)
         binding.sleepTrackerViewModel = sleepTrackerViewModel
 
+        val adapter = SleepNightAdapter()
+        binding.sleepList.adapter = adapter
+
+        //supplying the fragment's viewLifecycleOwner as the lifecycle owner,
+        // you can make sure this observer is only active when the RecyclerView is on the screen.
+        sleepTrackerViewModel.nights.observe(viewLifecycleOwner, Observer {
+            it?.let{
+                //whenever you get a non-null value (for nights), assign the value to the adapter's data
+                adapter.data = it
+            }
+        })
+
         sleepTrackerViewModel.navigateToSleepQuality.observe(this, Observer { night ->
             night?.let {
                 // We need to get the navController from this, because button is not ready, and it
