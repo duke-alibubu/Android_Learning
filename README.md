@@ -231,3 +231,17 @@ suspend fun suspendFunction() {
 - In a production app, you might have multiple view holders, more complex adapters, and multiple developers making changes. You should structure your code so that everything related to a view holder is only in the view holder.
   + One way is to use Android's **Refactor > Extract > Function**
   + A good example: The `onCreateViewHolder()` method in the adapter currently inflates the view from the layout resource for the `ViewHolder`. However, inflation has nothing to do with the adapter, and everything to do with the `ViewHolder`. Inflation should happen in the `ViewHolder`.
+  
+### DiffUtil
+- To tell `RecyclerView` that an item in the list has changed and needs to be updated, one way is to call `notifyDataSetChanged()`. As a result, `RecyclerView` rebinds and redraws every item in the list, including items that are not visible on screen. This is very inefficient, especially for large lists.
+- `RecyclerView` has a class called `DiffUtil` which is for calculating the differences between two lists. `DiffUtil` takes an old list and a new list and figures out what's different. It finds items that were added, removed, or changed. Then it uses an algorithm called a *Eugene W. Myers's difference algorithm* to figure out the minimum number of changes to make from the old list to produce the new list.
+- `DiffUtil` has a class called `ItemCallBack` that you extend in order to figure out the difference between two lists.
+
+### ListAdapter
+- To get some list management for free, you can use the `ListAdapter` class instead of `RecyclerView.Adapter`. However, if you use `ListAdapter` you have to write your own adapter for other layouts.
+
+### Binding adapters & Data binding with RecyclerView
+- If we want to transform the data to display out without using `Transformations`, we can use binding adapters to help data binding use them.
+- To declare a binding adapter, define a method that takes an item and a view, and annotate the method with `@BindingAdapter`. In Kotlin, you can write the binding adapter as an extension function on the View. Pass in the name of the property that the adapter adapts. E.g: ```@BindingAdapter("sleepDurationFormatted")```
+- In the XML layout, set an app property with the same name as the binding adapter. Pass in a variable with the data. For example:
+```.app:sleepDurationFormatted="@{sleep}"```
