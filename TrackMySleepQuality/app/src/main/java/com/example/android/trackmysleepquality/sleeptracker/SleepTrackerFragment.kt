@@ -21,6 +21,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -64,7 +65,11 @@ class SleepTrackerFragment : Fragment() {
                         this, viewModelFactory).get(SleepTrackerViewModel::class.java)
         binding.sleepTrackerViewModel = sleepTrackerViewModel
 
-        val adapter = SleepNightAdapter()
+        val adapter = SleepNightAdapter(SleepNightListener { nightId ->
+            sleepTrackerViewModel.onSleepNightClicked(nightId)
+        })
+
+
         binding.sleepList.adapter = adapter
 
         //supplying the fragment's viewLifecycleOwner as the lifecycle owner,
@@ -94,6 +99,15 @@ class SleepTrackerFragment : Fragment() {
             }
         })
 
+        sleepTrackerViewModel.navigateToSleepDetail.observe(this, Observer { night ->
+            night?.let {
+                this.findNavController().navigate(
+                        SleepTrackerFragmentDirections
+                                .actionSleepTrackerFragmentToSleepDetailFragment(night))
+                sleepTrackerViewModel.onSleepDetailNavigated()
+            }
+        })
+
         sleepTrackerViewModel.showSnackBarEvent.observe(this, Observer {
             if (it == true){
                 Snackbar.make(
@@ -111,7 +125,7 @@ class SleepTrackerFragment : Fragment() {
         binding.setLifecycleOwner(this)
 
         //GridLayoutManager
-        val manager = GridLayoutManager(activity, 2)
+        val manager = GridLayoutManager(activity, 2 )
         binding.sleepList.layoutManager = manager
         return binding.root
     }
