@@ -6,7 +6,7 @@
 - TemplateApp is a basic Android App resulting from a template.
 - AndroidTrivia is a basic Android App about using navigation path and fragments.
 - GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
-- TrackMySleepQuality is more complex Android App making use of Room database & coroutines and RecyclerView.
+- TrackMySleepQuality is more complex Android App making use of Room database & coroutines, binding adapter and many topics regarding RecyclerView.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -245,6 +245,8 @@ suspend fun suspendFunction() {
 - To declare a binding adapter, define a method that takes an item and a view, and annotate the method with `@BindingAdapter`. In Kotlin, you can write the binding adapter as an extension function on the View. Pass in the name of the property that the adapter adapts. E.g: ```@BindingAdapter("sleepDurationFormatted")```
 - In the XML layout, set an app property with the same name as the binding adapter. Pass in a variable with the data. For example:
 ```.app:sleepDurationFormatted="@{sleep}"```
+- **IMPORTANT**: If you want to use functions in the xml file, have to declare the data binding object that is used first.
+- Be careful that binding adapter item might be null - so remember to handle null exception. Unfortunately data binding makes it harder to debug.
 
 ### GridLayout
 - Layout managers manage how the items in the `RecyclerView` are arranged. For more complicated use cases, implement a custom `LayoutManager`.
@@ -252,3 +254,12 @@ suspend fun suspendFunction() {
 - You can set the `LayoutManager` for the RecyclerView either in the XML layout file that contains the `<RecyclerView>` element, or programmatically.
   + The `GridLayoutManager` constructor takes up to four arguments: a context, which is the activity, the number spans (columns, in the default vertical layout), an orientation (default is vertical), and whether it's a reverse layout (default is false). (E.g: `val manager = GridLayoutManager(activity, 3)`).
   + Then set the layout manager to your `RecyclerView`: E.g: `binding.sleepList.layoutManager = manager`
+  
+### Implementing click handlers for items within RecyclerView
+- To make items in a `RecyclerView` respond to clicks, attach click listeners to list items in the `ViewHolder`, and handle clicks in the `ViewModel` - since the `ViewModel` is the one that holds data.
+  + Create a listener class that takes a lambda and assigns it to an `onClick()` function.
+  + Set the click listener on the view XML file. (`list_item_...` - Remember we need data binding here).
+  + Pass the click listener to the adapter constructor, into the view holder, and add it to the binding object.
+  + In the fragment that shows the recycler view, where you create the adapter, define a click listener by passing a lambda to the adapter --- since the fragment would hold the ViewModel object also.
+  + Implement the click handler in the view model.
+  
