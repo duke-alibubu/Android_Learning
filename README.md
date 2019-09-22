@@ -245,3 +245,10 @@ suspend fun suspendFunction() {
 - To declare a binding adapter, define a method that takes an item and a view, and annotate the method with `@BindingAdapter`. In Kotlin, you can write the binding adapter as an extension function on the View. Pass in the name of the property that the adapter adapts. E.g: ```@BindingAdapter("sleepDurationFormatted")```
 - In the XML layout, set an app property with the same name as the binding adapter. Pass in a variable with the data. For example:
 ```.app:sleepDurationFormatted="@{sleep}"```
+
+### GridLayout
+- Layout managers manage how the items in the `RecyclerView` are arranged. For more complicated use cases, implement a custom `LayoutManager`.
+- From a design perspective, `GridLayout` is best used for lists of items that can be represented as icons or images. `GridLayout` arranges items in a grid of rows and columns. Assuming vertical scrolling, each item in a row takes up what's called a "span". You can customize how many spans an item takes up, creating more interesting grids without the need for a custom layout manager. Create an item layout for one item in the grid, and the layout manager takes care of arranging the items.
+- You can set the `LayoutManager` for the RecyclerView either in the XML layout file that contains the `<RecyclerView>` element, or programmatically.
+  + The `GridLayoutManager` constructor takes up to four arguments: a context, which is the activity, the number spans (columns, in the default vertical layout), an orientation (default is vertical), and whether it's a reverse layout (default is false). (E.g: `val manager = GridLayoutManager(activity, 3)`).
+  + Then set the layout manager to your `RecyclerView`: E.g: `binding.sleepList.layoutManager = manager`
