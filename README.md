@@ -6,7 +6,8 @@
 - TemplateApp is a basic Android App resulting from a template.
 - AndroidTrivia is a basic Android App about using navigation path and fragments.
 - GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
-- TrackMySleepQuality is more complex Android App making use of Room database & coroutines, binding adapter and many topics regarding RecyclerView.
+- TrackMySleepQuality is a more complex Android App making use of Room database & coroutines, binding adapter and many topics regarding RecyclerView.
+- MarsRealEstate is a more complex Android App using Retrofit to interact with REST web service and Moshi for JSON parsing.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -263,3 +264,13 @@ suspend fun suspendFunction() {
   + In the fragment that shows the recycler view, where you create the adapter, define a click listener by passing a lambda to the adapter --- since the fragment would hold the ViewModel object also.
   + Implement the click handler in the view model.
   
+## Interacting with the Internet
+- The `Retrofit` library is a client library that enables your app to make requests to a REST web service.
+- To enable your app to make connections to the internet, add the `android.permission.INTERNET` permission in the Android manifest.
+- The `Moshi` library is Android JSON parser that converts a JSON string into Kotlin objects. `Retrofit` has a converter that works with `Moshi`.
+  + `Moshi` matches the keys in a JSON response with properties in a data object that have the same name.
+  + To use a different property name for a key, annotate that property with the `@Json` annotation and the JSON key name.
+
+### Retrofit and coroutines
+- `Call` adapters let `Retrofit` create APIs that return something other than the default `Call` class. Use the `CoroutineCallAdapterFactory` class to replace the `Call` with a coroutine `Deferred`.
+- Use the `await()` method on the `Deferred `object to cause your coroutine code to wait without blocking until the value is ready, and then the value is returned.
