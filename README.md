@@ -277,4 +277,5 @@ suspend fun suspendFunction() {
 
 ## Glide
 - A library to download, buffer, decode, and cache images into your app.
+  + To add options to the Glide request, use the `apply()` method. For example, use `apply()` with `placeholder()` to specify a loading drawable, and use `apply()` with `error()` to specify an error drawable.
 
