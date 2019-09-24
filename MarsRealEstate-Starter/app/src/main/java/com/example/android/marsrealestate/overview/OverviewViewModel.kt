@@ -22,6 +22,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.android.marsrealestate.network.MarsApi
 import com.example.android.marsrealestate.network.MarsProperty
+import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +42,10 @@ class OverviewViewModel : ViewModel() {
     /**
      * Call getMarsRealEstateProperties() on init so we can display status immediately.
      */
+    private var viewModelJob = Job()
+    private val coroutineScope = CoroutineScope(
+            viewModelJob + Dispatchers.Main )      //The Dispatchers.Main dispatcher uses the UI thread for its work.
+                                // Because Retrofit does all its work on a background thread, there's no reason to use any other thread for the scope.
     init {
         getMarsRealEstateProperties()
     }
@@ -49,17 +54,23 @@ class OverviewViewModel : ViewModel() {
      * Sets the value of the status LiveData to the Mars API status.
      */
     private fun getMarsRealEstateProperties() {
-       MarsApi.retrofitService.getProperties().enqueue(
-               object: Callback<List<MarsProperty>> {
-                   override fun onFailure(call: Call<List<MarsProperty>>, t: Throwable) {
-                       _response.value = "Failure: " + t.message
-                   }
+       coroutineScope.launch {
+           var getPropertiesDeferred = MarsApi.retrofitService.getProperties()
+           try {
+               var listResult = getPropertiesDeferred.await()
+               //returns the result from the network call when the value is ready.
+               //The await() method is non-blocking, so the Mars API service retrieves the data from the network without blocking the current thread
+               // — which is important because we're in the scope of the UI thread.
+               _response.value =
+                       "Success: ${listResult.size} Mars properties retrieved"
+           } catch (e: Exception) {
+               _response.value = "Failure: ${e.message}"
+           }
+       }
+    }
 
-                   override fun onResponse(call: Call<List<MarsProperty>>, response: Response<List<MarsProperty>>) {
-                       //response.body() is now a list of MarsProperty objects
-                       _response.value = "Success: ${response.body()?.size} Mars properties retrieved"
-                   }
-               }
-       )
+    override fun onCleared() {
+        super.onCleared()
+        viewModelJob.cancel()
     }
 }

@@ -17,8 +17,10 @@
 
 package com.example.android.marsrealestate.network
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -36,6 +38,7 @@ private const val BASE_URL = " https://android-kotlin-fun-mars-server.appspot.co
 // MoshiConverterFactory to work with Moshi
 
 private val retrofit = Retrofit.Builder().addConverterFactory(MoshiConverterFactory.create(moshi))
+                                                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                                                 .baseUrl(BASE_URL)
                                                 .build()
 
@@ -43,11 +46,11 @@ private val retrofit = Retrofit.Builder().addConverterFactory(MoshiConverterFact
 interface MarsApiService {
 
     //When the getProperties() method is invoked, Retrofit appends the endpoint 'realestate' to the base URL
-    // , and creates a Call object.
+    // , and creates a Call object. Call adapters add the ability for Retrofit to create APIs that return something other than the default Call class.
     //That Call object is used to start the request.
     @GET("realestate")
     fun getProperties():
-            Call<List<MarsProperty>>
+            Deferred<List<MarsProperty>> //The Deferred interface defines a coroutine job that returns a result value (Deferred inherits from Job).
 
 }
 
