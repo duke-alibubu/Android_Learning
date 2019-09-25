@@ -275,6 +275,7 @@ suspend fun suspendFunction() {
 ### Retrofit and coroutines
 - `Call` adapters let `Retrofit` create APIs that return something other than the default `Call` class. Use the `CoroutineCallAdapterFactory` class to replace the `Call` with a coroutine `Deferred`.
 - Use the `await()` method on the `Deferred `object to cause your coroutine code to wait without blocking until the value is ready, and then the value is returned.
+- Use `@Query` annotation to specify query parameters in the request, E.g: `...?filter=...`. More info in commit *filter and detail views with internet data*.
 
 ## Glide
 - A library to download, buffer, decode, and cache images into your app.
