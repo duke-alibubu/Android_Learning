@@ -58,8 +58,9 @@
 - Finally, to make the ```LiveData``` data binding work, set the current activity (the UI controller) as the lifecycle owner of the binding variable in the UI controller.
   + ```binding.lifecycleOwner = this```
 - One of the ***EXTREMELY POWERFUL*** features of data binding when working with ```LiveData``` is that:
-  + ```LiveData``` objects can be used as a data-binding source to automatically notify the UI about changes in the data.
+  + ```LiveData``` objects can be used as a data-binding source to automatically notify the UI about changes in the data. E.g: `<import type="android.view.View"/>` 
   + Define in the xml file: ```android:text="@{gameViewModel.word}"```
+  + ***NOTE***: You need to use imports when you want to use components of a class inside a data binding expression in a layout file.
 ## Basic structure & general settings of an Android Project  
 - 'java' folder contains the main code for the app (i.e the Activity , v..v)
 - 'res' folder holds resources - static contents used in the apps, including images, text strings, screen layouts, styles, and values such as hexadecimal colors or standard dimensions.
