@@ -25,6 +25,12 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
+import retrofit2.http.Query
+
+enum class MarsApiFilter(val value: String) {
+    SHOW_RENT("rent"),
+    SHOW_BUY("buy"),
+    SHOW_ALL("all") }
 
 private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
@@ -49,9 +55,12 @@ interface MarsApiService {
     // , and creates a Call object. Call adapters add the ability for Retrofit to create APIs that return something other than the default Call class.
     //That Call object is used to start the request.
     @GET("realestate")
-    fun getProperties():
+    fun getProperties(@Query("filter") type: String):
             Deferred<List<MarsProperty>> //The Deferred interface defines a coroutine job that returns a result value (Deferred inherits from Job).
 
+    //The @Query annotation tells the getProperties() method (and thus Retrofit) to make the web service request with the filter option.
+    // Each time getProperties() is called, the request URL includes the ?filter=type portion,
+    // which directs the web service to respond with results that match that query.
 }
 
 //The Retrofit `create()` method creates the Retrofit service itself with the MarsApiService interface.

@@ -18,7 +18,10 @@
 package com.example.android.marsrealestate.network
 
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
+import android.os.Parcelable
 
+@Parcelize
 data class MarsProperty(
 
         //When Moshi parses the JSON, it matches the keys by name and fills the data objects with appropriate values.
@@ -30,5 +33,7 @@ data class MarsProperty(
         val imgSrcUrl: String,
 
         val type: String,
-        val price: Double
-)
+        val price: Double) : Parcelable {
+        val isRental
+                get() = type == "rent"
+}
