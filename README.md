@@ -8,6 +8,7 @@
 - GuessTheWorld is a basic Android App using ViewModel and LiveData, making use of the observer & factory pattern as well as encapsulation.
 - TrackMySleepQuality is a more complex Android App making use of Room database & coroutines, binding adapter and many topics regarding RecyclerView.
 - MarsRealEstate is a more complex Android App using Retrofit to interact with REST web service and Moshi for JSON parsing.
+- DessertClicker is a basic Android app implemented with simple lifecycle methods.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -19,6 +20,21 @@
   + Bound services run because some other app (or the system) has said that it wants to make use of the service. This is basically the service providing an API to another process.
 - **Broadcast receiver**: A component that enables the system to deliver events to the app outside of a regular user flow, allowing the app to respond to system-wide broadcast announcements. Because broadcast receivers are another well-defined entry into the app, the system can deliver broadcasts even to apps that aren't currently running. So, for example, an app can schedule an alarm to post a notification to tell the user about an upcoming event... and by delivering that alarm to a BroadcastReceiver of the app, there is no need for the app to remain running until the alarm goes off.
 - **Content provider**: Manages a shared set of app data that you can store in the file system, in a SQLite database, on the web, or on any other persistent storage location that your app can access. Through the content provider, other apps can query or modify the data if the content provider allows it.
+
+## Activity Lifecycle
+![Activity Lifecycle](https://developer.android.com/guide/components/images/activity_lifecycle.png)
+
+- There are seven lifecycle methods: 
+  + `onCreate()`: Called when the activity is initialized. Must be implemented. Inflate the layout, set click listeners and data binding.
+  + `onStart()`: Ur acitivity is now visible on the screen. 
+  + `onResume()`: Ur activity is now in focus and able to interact with the user. When your activity is still (partially) visible, but not interactable (Like, when a pop-up box appear), it is not in RESUMED state.
+  + `onRestart()`: is called when the app is started not the FIRST time, before calling `onStart()`.
+  + `onPause()`: Ur activity is not in focus and not able to interact with the user. (it might still be partially visible).
+  + `onStop()`: Ur activity is no longer visible on the screen (Like when u switch to another app, ur app run in background). However when this is called, ur app is still in memory running in the background.
+  + `onDestroy()`: The activity was fully shut down and can be garbage-collected. (refers to the automatic cleanup of objects that you'll no longer use). After `onDestroy()` is called, the OS knows that those resources are discardable, and it starts cleaning up that memory.
+  
+- `onCreate()` is on pair with `onDestroy()`, `onStart()` pairs with `onStop()`, `onPause()` pairs with `onResume()`.
+
 ## UI controller
 - A *UI Controller* is a UI-based class such as ```Activity``` or ```Fragment```. A UI controller should only contain logic that handles UI and operating-system interactions such as displaying views and capturing user input. Don't put decision-making logic, such as logic that determines the text to display, into the UI controller.
 ## ViewModel
