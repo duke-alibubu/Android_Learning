@@ -8,39 +8,33 @@
   <component name="ChangeListManager">
     <list default="true" id="a15359b2-1f9a-4027-936c-a73c6077ebcb" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/AndroidTrivia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_annotation_annotation_1_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_arch_core_core_common_2_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_collection_collection_1_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_0_alpha2_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_0_alpha2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_core_core_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_0_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_rc01_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_alpha1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_2_0_0_alpha1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_2_0_0_alpha1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_core_core_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_fragment_fragment_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_alpha1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_0_0_alpha1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_print_print_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_0_0_alpha3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_alpha3_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_3_0_jar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../DessertClicker-Starter/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_3_0_jar.xml" afterDir="false" />
@@ -222,11 +216,11 @@
           <provider selected="true" editor-type-id="android-designer2" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="61" column="75" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="75" />
+            <state relative-caret-position="503">
+              <caret line="53" column="75" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="75" />
               <folding>
                 <element signature="e#0#615#0" expanded="true" />
               </folding>
@@ -234,11 +228,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="31" column="64" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="64" />
+            <state relative-caret-position="170">
+              <caret line="22" column="39" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="39" />
               <folding>
                 <element signature="e#0#615#0" expanded="true" />
               </folding>
@@ -279,6 +273,7 @@
     <findStrings>
       <find>question</find>
       <find>radio</find>
+      <find>supportlibVersion</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -626,20 +621,20 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="31" column="64" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="64" />
+        <state relative-caret-position="503">
+          <caret line="53" column="75" selection-start-line="53" selection-start-column="63" selection-end-line="53" selection-end-column="75" />
           <folding>
             <element signature="e#0#615#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="61" column="75" selection-start-line="61" selection-start-column="58" selection-end-line="61" selection-end-column="75" />
+        <state relative-caret-position="170">
+          <caret line="22" column="39" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="39" />
           <folding>
             <element signature="e#0#615#0" expanded="true" />
           </folding>

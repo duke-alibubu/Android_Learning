@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Wed Nov 27 16:34:54 SGT 2019
+0.baseType=DIRECTORY
+0.base=D\:\\AndroidStudioProjects\\KotlinStarter\\DessertClicker-Starter\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+0.path=classes.dex
+0.set=DEX
+count=1
