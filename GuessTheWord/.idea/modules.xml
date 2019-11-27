@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/GuessTheWord-Starter.iml" filepath="$PROJECT_DIR$/.idea/GuessTheWord-Starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GuessTheWord.iml" filepath="$PROJECT_DIR$/GuessTheWord.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
