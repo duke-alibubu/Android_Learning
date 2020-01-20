@@ -9,6 +9,7 @@
 - TrackMySleepQuality is a more complex Android App making use of Room database & coroutines, binding adapter and many topics regarding RecyclerView.
 - MarsRealEstate is a more complex Android App using Retrofit to interact with REST web service and Moshi for JSON parsing.
 - DessertClicker is a basic Android app implemented with simple lifecycle methods.
+- android-workmanager-kotlin is an Android app using WorkManager.
 # References
 - ```https://developer.android.com/index.html```
 - ```https://material.io/```: a conceptual design philosophy that outlines how apps should look and function on mobile devices
@@ -298,4 +299,13 @@ suspend fun suspendFunction() {
   + To add options to the Glide request, use the `apply()` method. For example, use `apply()` with `placeholder()` to specify a loading drawable, and use `apply()` with `error()` to specify an error drawable. E.g in commit *Display img with Glide*
 
 # Background processing like a pro
+- *to be updated...*
 - `https://developer.android.com/guide/background/`
+
+## WorkManager
+- `https://codelabs.developers.google.com/codelabs/android-workmanager-kt/#0`
+- Basically to use a WorkManager: WorkManager is the recommended task scheduler on Android for deferrable work, with a guarantee to be executed. 
+  + Create your `Worker` class, then enqueue it into the `WorkManager`. It shall be run once the condition is met.
+  + You can chain your work with `WorkManager`.
+  + You can also ensure unique work (reason you choose)
+  + You can track the status of a `Work` using `WorkInfo` object. `WorkInfo` is an object that contains details about the current state of a `WorkRequest`.
