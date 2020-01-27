@@ -13,3 +13,5 @@
 ## Moshi
 - A JSON parsing library. Parsing JSON by using data class adapted to the JSON.
 - Example in `https://gist.github.com/swankjesse/61354fd0a20bf56072f6a1d0c82fb9fc`.
+
+## Dagger - to learn
