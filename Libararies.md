@@ -14,4 +14,10 @@
 - A JSON parsing library. Parsing JSON by using data class adapted to the JSON.
 - Example in `https://gist.github.com/swankjesse/61354fd0a20bf56072f6a1d0c82fb9fc`.
 
-## Dagger - to learn
+## Dagger - dependency injection
+- Example article in `https://medium.com/@yostane/dependency-injection-with-dagger-2-inject-and-provides-ce21f7449ec5`
+- Dagger 2 provides dependency injection through annotations:
+  + `@Singleton`: As it name implies.
+  + `@Component`: used to annotate the interface that returns the root object of the graph.
+  + `@Inject`: Inject a class into the D.I graph of Dagger. Very convenient, however, it is not always usable since it's not applicable to interface, furthermore you would need to modify the source code to use this annotation so it's not applicable to modules. Also, not applicable to objects that require configuration outside of the constructor (like objects generated with a factory).
+  + `@Provides` & `@Module`: we instantiate Dagger allows to add these object to its graph using modules. A module is a class that has the `@Module` annotation and defines methods annotated with the `@Provides` annotation. Annotated methods return instances of classes that cannot support the `@Inject` annotation.
