@@ -33,3 +33,6 @@
 ### Response
 - Response is a single HTTP response, each part is the response to one of the requests in the batched request, in the same order as the requests.
 - Each response part is preceded by a Content-Type header that marks the beginning of the part.
+### TabLayout + ViewPager
+- `https://developer.android.com/guide/navigation/navigation-swipe-view`
+- A way to implement frequent-swipe tab view.
