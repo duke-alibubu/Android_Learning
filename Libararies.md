@@ -36,3 +36,9 @@
 ## TabLayout + ViewPager
 - `https://developer.android.com/guide/navigation/navigation-swipe-view`
 - A way to implement frequent-swipe tab view.
+
+## SharedPreferences
+- Store ur data amongst various different sessions ... 
+## RxJava
+- Another libraries for observers pattern ... and many things more!
+
