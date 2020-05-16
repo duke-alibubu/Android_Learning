@@ -309,3 +309,6 @@ suspend fun suspendFunction() {
   + You can chain your work with `WorkManager`.
   + You can also ensure unique work (reason you choose)
   + You can track the status of a `Work` using `WorkInfo` object. `WorkInfo` is an object that contains details about the current state of a `WorkRequest`.
+
+# Future ref ....
+- View customization: `https://www.youtube.com/watch?v=4NNmMO8Aykw&feature=youtu.be`
