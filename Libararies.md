@@ -41,4 +41,14 @@
 - Store ur data amongst various different sessions ... 
 ## RxJava
 - Another libraries for observers pattern ... and many things more!
-
+## Canvas
+- For drawing, obviously.
+- Canvas: can be used via View, Drawable or can be created from a Bitmap.
+- Path: a cache of multiple canvas commands
+onChangeBounds: update Path object to new measurements
+canvas.clip(): the defined clipped area will not be ignored for all canvas drawings. Untill the canvas is restored to a state before the clip.
+- Save restore: is like a big stack of undo. Like each restore goes to the previous save state in the stack. Save and restore makes it possible to just draw what u want to draw and dont worry about the positioning, as it is handled already with the rotation and translation of the canvas. If we want for example a smaller version of our drawing, we can just use canvas.scale and all our drawings become smaller.
+- Scale: scale all future draw calls by the specified amount.
+Methods to save and restore: translate, rotate, clip. If Canvas is not restored it will be passed on to the next view with this modification and will brake the drawing of the next View.
+- PathEffect: modifies how a path is drawn.
+- ComposePathEffect: only one pathEffect can be applied, with this multiple effects can be combined. The order they are applied are from last to first.
